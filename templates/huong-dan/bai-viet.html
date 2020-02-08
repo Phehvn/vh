@@ -1,0 +1,71 @@
+{% extends 'layouts/main.html' %}
+{% load static %}
+{% block content %}
+{% for blog in blogs %}
+  <div class="heading-title">
+    <h1>{{blog.art_name}}</h1>
+    <img src="{{blog.art_img.url}}" alt="{{blog.art_name}}">
+  </div>
+{% endfor %}
+<div class="container">
+    <div class="row">
+      <section class="col m8 s12">
+        <p>
+          <a href="kubet368.com">
+            <img src="{% static 'img/footer-banner-kubet.gif' %}" alt="KUBET nhà cái uy tín hàng đầu">
+          </a>
+        </p>
+        {% for blog in blogs %}
+        <div class="child-content">
+          <div>{{ blog.description | safe}}</div>
+        </div>
+        {% endfor %}
+        <h2>Có thể bạn sẽ thích</h2>
+        <ul class="collection">
+          <li class="collection-item">
+            <a href="/anh-nong-18/cosplay-y-ta-sexy.html&id=37">
+              <img src="{% static 'img/gallery/co-y-ta-goi-cam.jpg' %}" alt="Ảnh sexy dâm đãng của cô ý tá.">
+              <p><span class="ttl">Cosplay cô y tá sexy</span><br>
+                <span class="date"><i class="material-icons">access_time</i>08 Tháng 2, 2020</span>
+                mời các bạn cùng thưởng thức album cosplay cô y tá cùng kube368.com [...]</p>
+            </a>
+          </li>
+          <li class="collection-item">
+            <a href="/anh-nong-18/tiep-vien-hang-khong-dang-chuan.html&id=38">
+              <img src="{% static 'img/gallery/em-tiep-vien-hang-khong-xinh-dep.jpg' %}"
+                alt="chiêm ngưỡng vẻ đẹp của tiếp viên hàng không dáng chuẩn">
+              <p><span class="ttl">chiêm ngưỡng vẻ đẹp của tiếp viên hàng không dáng chuẩn</span><br>
+                <span class="date"><i class="material-icons">access_time</i>08 Tháng 2, 2020</span>
+                da trắng mặt xinh chung tình dễ bảo,mời các bạn chiêm ngưỡng [...]</p>
+            </a>
+          </li>
+          <li class="collection-item">
+            <a href="/anh-nong-18/gai-xinh-trong-phong-tam.html&id=39">
+              <img src="{% static 'img/gallery/gai-xinh-chup-hinh-trong-phong-tam.jpg' %}"
+                alt="Cùng chiêm ngưỡng ảnh girl xinh trong phóng tắm">
+              <p><span class="ttl">Album girl xinh trong phòng tắm</span><br>
+                <span class="date"><i class="material-icons">access_time</i>08 Tháng 2, 2020</span>
+                cùng ngắm vòng 3 của hot girl tạo dáng trong phòng tắm nhé [...]</p>
+            </a>
+          </li>
+          <li class="collection-item">
+            <a href="/anh-nong-18/album-18-cua-gai-xinh.html&id=36" id="khuyen-mai-50k">
+              <img src="{% static 'img/gallery/chup-anh-cung-gau.jpg' %}" alt="gái xinh chụp hình cùng gấu bông">
+              <p><span class="ttl">gái xinh chụp hình cùng gấu bông</span><br>
+                <span class="date"><i class="material-icons">access_time</i>08 Tháng 2, 2020</span>
+                một album chụp hình cùng gấu bông đầy táo bạo mời các bạn thưởng thức [...]</p>
+            </a>
+          </li>
+        </ul>
+        <p>
+          <a href="kubet368.com">
+            <img src="{% static 'img/footer-banner-kubet.gif' %}" alt="KUBET nhà cái uy tín hàng đầu">
+          </a>
+        </p>
+      </section>
+      <aside class="col m4 s12">
+        {% include '../widgets/aside.html' %}
+      </aside>
+    </div>
+  </div>
+{% endblock %}

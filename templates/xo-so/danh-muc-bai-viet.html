@@ -1,0 +1,65 @@
+{% extends 'layouts/main.html' %}
+{% load static %}
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <section class="col m8 s12">
+        {% for title in categoriesname %}
+        <h1>{{ title.cat_name }}</h1>
+        {% endfor %}
+        <h1>{{ categories.cat_name }}</h1>
+        <div class="km-content">
+          <!-- { % include './listarticle.html' % } -->
+          <ul class="collection">
+            {% for blog in listarticle %}
+              <li class="collection-item">
+                  <a href="/xo-so/{{ blog.art_slug }}.html&id={{ blog.art_id }}">
+                    <img src="{{ blog.art_img.url }}" alt="{{ blog.art_name }}">
+                    <p><span class="ttl">{{ blog.art_name }}</span><br>
+                      <span class="date"><i class="material-icons">access_time</i>{{ blog.date_create | date:"d M, Y" }}</span>
+                      {{ blog.art_mo_ta | safe }} [...]</p>
+                  </a>
+                </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <h2>Có thể bạn sẽ thích</h2>
+        <ul class="collection">
+          <li class="collection-item">
+            <a href="co-y-ta-goi-tinh.html">
+              <img src="{% static 'img/gallery/co-y-ta-goi-cam.jpg' %}" alt="Ảnh sexy dâm đãng của cô ý tá.">
+              <p><span class="ttl">Album cosplay cô y tá nóng bỏng mắt</span><br>
+                mời các bạn cùng thưởng thức album cosplay cô y tá cùng kube368.com [...]</p>
+            </a>
+          </li>
+          <li class="collection-item">
+            <a href="nu-tiep-vien-hang-khong.html">
+              <img src="{% static 'img/gallery/em-tiep-vien-hang-khong-xinh-dep.jpg' %}"
+                alt="chiêm ngưỡng vẻ đẹp của tiếp viên hàng không dáng chuẩn">
+              <p><span class="ttl">chiêm ngưỡng vẻ đẹp của tiếp viên hàng không dáng chuẩn</span><br>
+                da trắng mặt xinh chung tình dễ bảo,mời các bạn chiêm ngưỡng [...]</p>
+            </a>
+          </li>
+          <li class="collection-item">
+            <a href="album-gai-xinh-trong-phong-tam.html">
+              <img src="{% static 'img/gallery/gai-xinh-chup-hinh-trong-phong-tam.jpg' %}"
+                alt="Cùng chiêm ngưỡng ảnh girl xinh trong phóng tắm">
+              <p><span class="ttl">Album girl xinh trong phòng tắm</span><br>
+                cùng ngắm vòng 3 của hot girl tạo dáng trong phòng tắm nhé [...]</p>
+            </a>
+          </li>
+          <li class="collection-item">
+            <a href="girl-xinh-chup-hinh.html" id="khuyen-mai-50k">
+              <img src="{% static 'img/gallery/chup-anh-cung-gau.jpg' %}" alt="gái xinh chụp hình cùng gấu bông">
+              <p><span class="ttl">gái xinh chụp hình cùng gấu bông</span><br>
+                một album chụp hình cùng gấu bông đầy táo bạo mời các bạn thưởng thức [...]</p>
+            </a>
+          </li>
+        </ul>
+      </section>
+      <aside class="col m4 s12">
+        {% include '../widgets/aside.html' %}
+      </aside>
+    </div>
+  </div>
+{% endblock %}
